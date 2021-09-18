@@ -1,0 +1,50 @@
+TRABAJO DATATÓN DE GRUPO 3 (ANGÉLICA, ÁLVARO Y EDSON) - COMISIÓN GABRIEL
+
+```{r}
+library(rio)
+library(htmltab)
+```
+
+Base de datos sobre cronología de epidemias
+
+```{r}
+link= "https://es.wikipedia.org/wiki/Anexo:Cronolog%C3%ADa_de_epidemias"
+path="/html/body/div[3]/div[3]/div[5]/div[1]/table[4]"
+dataWS1 = htmltab(link, path,rm_nodata_cols = F)
+head(dataWS1)
+
+```
+
+Base de datos simple que contenga información sobre el número de vacunas aplicadas, el número de personas con una dosis, el número de personas con dos dosis, los vacunados del día de hoy, y las dosis aplicadas en el 8tavo vacunatón.
+
+```{r}
+
+```
+
+Base de datos sobre los Centros de Vacunación COVID-19 en el Perú
+
+```{r}
+
+```
+
+Base de datos sobre la Programación de la Vacunación COVID-19 en el Perú
+
+```{r}
+
+```
+
+Mapa del Perú por distritos.
+
+```{r}
+library(sp)
+library(rgdal)
+```
+
+```{r}
+fromGit = ("https://github.com/Edson-Fernandez-Begazo/Estadistica_2/blob/main/Practicas/DISTRITOS.json?raw=true")
+
+wazipMap <- rgdal::readOGR(fromGit,stringsAsFactors = FALSE)
+
+plot(wazipMap)
+```
+
